@@ -4,6 +4,8 @@ import javax.inject._
 import play.api._
 import play.api.mvc._
 import scala.collection.mutable.HashMap
+import scala.io.Source
+import play.api.libs.json._
 import play.api.libs.json.Json
 import scala.collection.mutable.ArrayBuffer
 import java.util.Date
@@ -27,14 +29,15 @@ class PostController @Inject()(cc: ControllerComponents) extends AbstractControl
   }
 
   def index(client_msg_id: String) = Action { implicit request: Request[AnyContent] =>
+    val source: String = Source.fromFile("conf/2018-08-10.json").getLines.mkString
+    val json: JsValue = Json.parse(source)
 
-    val post: HashMap[String, String] = HashMap(
-      ("client_msg_id", client_msg_id),
-      ("user","U06CVDTT6"),
-      ("text","#woocommerce #php\n<https://www.ibenic.com/manage-order-item-meta-woocommerce/>\nมันเกี่ยวกับพวก item meta data ของ order เช่นถ้าเราอยากเปลี่ยน text ใน order details หรือ email มันมี filter ของ woo ที่เปลี่ยนที่เดียว สามารถเปลี่ยนได้ทั้งในหน้า order กับ email"),
-      ("ts", convertTimestampToString("1533892979.000041"))
-    )
+    val postList = (json).as[List[JsValue]]
 
-    Ok(Json.toJson(post))
+    val postItem = postList.filter((param) => {
+      (param \ "client_msg_id").as[JsString].value == client_msg_id
+    })
+
+    Ok(Json.toJson(postItem))
   }
 }

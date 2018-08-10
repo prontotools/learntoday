@@ -4,7 +4,7 @@ import javax.inject._
 import play.api._
 import play.api.mvc._
 import scala.collection.mutable.HashMap
-import Scala.io.Source
+import scala.io.Source
 import play.api.libs.json._
 import play.api.libs.json.Json
 import scala.collection.mutable.ArrayBuffer
@@ -42,6 +42,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     var postList = ArrayBuffer[HashMap[String, String]]()
     postList += post
 
-    Ok(Json.toJson(postList))
+    Ok(Json.toJson(json))
   }
 }
