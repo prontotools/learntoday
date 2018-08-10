@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat
 
 
 @Singleton
-class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class PostController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   def convertTimestampToString( ts:String ) : String = {
       val df: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
@@ -26,18 +26,15 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
       return date
   }
 
-  def index() = Action { implicit request: Request[AnyContent] =>
+  def index(client_msg_id: String) = Action { implicit request: Request[AnyContent] =>
 
     val post: HashMap[String, String] = HashMap(
-      ("client_msg_id", "1645d6d2-eab6-4837-a0ea-4014556dc6e8"),
+      ("client_msg_id", client_msg_id),
       ("user","U06CVDTT6"),
       ("text","#woocommerce #php\n<https://www.ibenic.com/manage-order-item-meta-woocommerce/>\nมันเกี่ยวกับพวก item meta data ของ order เช่นถ้าเราอยากเปลี่ยน text ใน order details หรือ email มันมี filter ของ woo ที่เปลี่ยนที่เดียว สามารถเปลี่ยนได้ทั้งในหน้า order กับ email"),
       ("ts", convertTimestampToString("1533892979.000041"))
     )
 
-    var postList = ArrayBuffer[HashMap[String, String]]()
-    postList += post
-
-    Ok(Json.toJson(postList))
+    Ok(Json.toJson(post))
   }
 }
