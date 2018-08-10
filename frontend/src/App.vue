@@ -2,11 +2,47 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Posts</router-link> |
-      <router-link to="/post/1">Post 1</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { mapMutations } from 'vuex'
+
+const posts = [
+  {
+    id: 1,
+    author: 'Gatuk',
+    tags: ['tag1', 'tag2'],
+    timestamp: new Date(),
+    message: 'wow'
+  },
+  {
+    id: 2,
+    author: 'Human',
+    tags: ['tag3', 'tag4'],
+    timestamp: new Date(),
+    message: 'woo'
+  },
+  {
+    id: 3,
+    author: 'Phawin',
+    tags: [],
+    timestamp: new Date(),
+    message: "I'm your father"
+  }
+]
+
+export default {
+  methods: {
+    ...mapMutations(['setPosts'])
+  },
+  created() {
+    this.setPosts(posts)
+  }
+}
+</script>
 
 <style>
 #app {
