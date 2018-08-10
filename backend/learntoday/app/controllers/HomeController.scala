@@ -4,6 +4,8 @@ import javax.inject._
 import play.api._
 import play.api.mvc._
 import scala.collection.mutable.HashMap
+import Scala.io.Source
+import play.api.libs.json._
 import play.api.libs.json.Json
 import scala.collection.mutable.ArrayBuffer
 import java.util.Date
@@ -27,6 +29,8 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   }
 
   def index() = Action { implicit request: Request[AnyContent] =>
+    val source: String = Source.fromFile("conf/2018-08-10.json").getLines.mkString
+    val json: JsValue = Json.parse(source)
 
     val post: HashMap[String, String] = HashMap(
       ("client_msg_id", "1645d6d2-eab6-4837-a0ea-4014556dc6e8"),

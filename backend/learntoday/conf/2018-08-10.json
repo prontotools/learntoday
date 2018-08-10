@@ -1,0 +1,89 @@
+[
+    {
+        "type": "message",
+        "user": "U35SUV5H6",
+        "text": "`#django`",
+        "client_msg_id": "29448437-a811-487e-9fc8-238591032022",
+        "ts": "1533892555.000237"
+    },
+    {
+        "type": "message",
+        "user": "U068YHZ1Q",
+        "text": "#django",
+        "client_msg_id": "7c21ebbf-65cb-431b-a2c5-22707e60800c",
+        "ts": "1533892828.000089"
+    },
+    {
+        "type": "message",
+        "user": "U068YHZ1Q",
+        "text": "ทดสอบ <#C07QL3HK3|test>",
+        "client_msg_id": "70e3063c-a738-4922-a100-b5ed8598d83d",
+        "ts": "1533892857.000088"
+    },
+    {
+        "type": "message",
+        "user": "U35SUV5H6",
+        "text": "<#C5NEADCQ3|learn-today>",
+        "client_msg_id": "e2815b7d-f6b0-4aa0-b5f8-65939a52b196",
+        "ts": "1533892857.000097"
+    },
+    {
+        "type": "message",
+        "user": "U06CVDTT6",
+        "text": "#woocommerce #php\n<https:\/\/www.ibenic.com\/manage-order-item-meta-woocommerce\/>\nมันเกี่ยวกับพวก item meta data ของ order เช่นถ้าเราอยากเปลี่ยน text ใน order details หรือ email มันมี filter ของ woo ที่เปลี่ยนที่เดียว สามารถเปลี่ยนได้ทั้งในหน้า order กับ email",
+        "client_msg_id": "1645d6d2-eab6-4837-a0ea-4014556dc6e8",
+        "attachments": [
+            {
+                "service_name": "Igor Benić",
+                "title": "How to manage Order Item Meta in WooCommerce - Igor Benić",
+                "title_link": "https:\/\/www.ibenic.com\/manage-order-item-meta-woocommerce\/",
+                "text": "When viewing WooCommerce order items, you or your clients might want to have additional information on it. What if you have multiple shipping addresses and you want to see an address under each shipping rate? What if there some Fees …",
+                "fallback": "Igor Benić: How to manage Order Item Meta in WooCommerce - Igor Benić",
+                "image_url": "https:\/\/www.ibenic.com\/wp-content\/uploads\/2018\/06\/wc-order-item-meta.jpg",
+                "image_width": 444,
+                "image_height": 250,
+                "ts": 1530280772,
+                "from_url": "https:\/\/www.ibenic.com\/manage-order-item-meta-woocommerce\/",
+                "image_bytes": 25439,
+                "service_icon": "https:\/\/www.ibenic.com\/wp-content\/uploads\/2017\/02\/cropped-favicon-512-1.png",
+                "id": 1,
+                "original_url": "https:\/\/www.ibenic.com\/manage-order-item-meta-woocommerce\/"
+            }
+        ],
+        "edited": {
+            "user": "U06CVDTT6",
+            "ts": "1533893009.000000"
+        },
+        "ts": "1533892979.000041"
+    },
+    {
+        "type": "message",
+        "user": "U1D52GL8K",
+        "text": "export JSON (one time) <https:\/\/prontomarketing.slack.com\/services\/export>",
+        "client_msg_id": "d444c93f-b135-4a6e-a357-531d08a48d54",
+        "ts": "1533893194.000189"
+    },
+    {
+        "type": "message",
+        "user": "U0MB5PX39",
+        "text": "ยืม เพิ่งรู้จักเว็บนี้จากรี่ <https:\/\/www.canva.com\/>\nเอาไว้สร้าง graphic content โคตรง่าย โคตรดี หลายๆ อันที่รี่สร้าง graphic เร็วๆ ก็มาจากอันนี้แหละ",
+        "client_msg_id": "d770d0ba-99c9-4746-b95b-36ddbf879ee2",
+        "attachments": [
+            {
+                "title": "Amazingly Simple Graphic Design Software – Canva",
+                "title_link": "https:\/\/www.canva.com\/",
+                "text": "Create beautiful designs with your team. Use Canva's drag-and-drop feature and layouts to design, share and print business cards, logos, presentations and more.",
+                "fallback": "Amazingly Simple Graphic Design Software – Canva",
+                "thumb_url": "https:\/\/static.canva.com\/static\/images\/fb_cover.png",
+                "from_url": "https:\/\/www.canva.com\/",
+                "thumb_width": 940,
+                "thumb_height": 788,
+                "service_icon": "https:\/\/static.canva.com\/static\/images\/apple-touch-icon-152x152.png",
+                "service_name": "canva.com",
+                "id": 1,
+                "original_url": "https:\/\/www.canva.com\/"
+            }
+        ],
+        "ts": "1533893575.000180"
+    }
+]
