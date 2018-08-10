@@ -1,16 +1,16 @@
 <template>
   <div class="posts">
     <div v-for="(post, index) in posts" :key="index">
-      <div>
+      <router-link :to="{name: 'postDetail', params: {id: post.id}}">
         <h2>{{post.author}}</h2>
         <ul v-if="post.tags.length">
-        <li class="tags" v-for="tag in post.tags" :key="tag">
-          {{tag}}
-        </li>
+          <li class="tags" v-for="tag in post.tags" :key="tag">
+            {{tag}}
+          </li>
         </ul>
         <p>{{post.timestamp}}</p>
         <p>{{post.message}}</p>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

@@ -1,24 +1,32 @@
 <template>
   <div class="grid">
-      <a-card :loading="false">
-        <div class="title-content">
-          <div>
-            <img src="https://www.w3schools.com/howto/img_avatar2.png" class="avatar"/>
-          </div>
-          <div class="user-info">
-            <h3>Gatuk</h3>
-            <p>Pronto Tools</p>
-          </div>
+    <a-card :loading="false">
+      <div class="title-content">
+        <div>
+          <img src="https://www.w3schools.com/howto/img_avatar2.png" class="avatar" />
         </div>
-        <p class="content">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p style="text-align: right;">
-          10 Aug 2018
-        </p>
-      </a-card>
+        <div class="user-info">
+          <h3>{{post.author}}</h3>
+          <p>Pronto Tools</p>
+        </div>
+      </div>
+      <p class="content">{{post.message}}</p>
+      <p style="text-align: right;">{{post.timestamp}}</p>
+    </a-card>
   </div>
 </template>
+
+<script>
+import { mapGetters, mapState } from 'vuex'
+
+export default {
+  computed: mapState({
+    post(state) {
+      return state.posts.entities[this.$route.params.id]
+    }
+  })
+}
+</script>
 
 <style scoped>
 .content {
@@ -32,12 +40,12 @@
 }
 
 .avatar {
- border-radius: 50%;
- width: 80px;
- height: 80px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
 
-.title-content{
+.title-content {
   display: flex;
   flex-direction: row;
 }
@@ -45,7 +53,6 @@
 .user-info {
   align-self: center;
   padding-left: 20px;
-
 }
 
 .user-info h3 {
@@ -55,5 +62,4 @@
 .user-info p {
   margin: 0;
 }
-
 </style>
