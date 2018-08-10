@@ -1,18 +1,24 @@
 <template>
-  <div class="posts">
-    <div v-for="(post, index) in posts" :key="index">
-      <router-link :to="{name: 'postDetail', params: {id: post.id}}">
-        <h2>{{post.author}}</h2>
-        <ul v-if="post.tags.length">
-          <li class="tags" v-for="tag in post.tags" :key="tag">
-            {{tag}}
-          </li>
-        </ul>
-        <p>{{post.timestamp}}</p>
-        <p>{{post.message}}</p>
-      </router-link>
-    </div>
+  <div class="posts grid">
+    <a-card :loading="false">
+      <a-list
+      itemLayout="horizontal"
+      :dataSource="posts"
+      >
+      <a-list-item slot="renderItem" slot-scope="item , index">
+        <a-list-item-meta
+          :description="item.message"
+        >
+          
+          <a slot="title" :href="'/post/'+item.id">{{item.author}}</a>
+          <a-avatar slot="avatar" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+        </a-list-item-meta>
+          <div>{{Date(item.timestamp)}}</div>
+      </a-list-item>
+      </a-list>
+    </a-card>
   </div>
+
 </template>
 
 <script>
@@ -24,15 +30,21 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.posts ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
+<style>
+.posts {
+  text-align: left;
+
 }
-.posts li {
-  display: inline-block;
-  margin: 0 10px;
+
+.content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.grid {
+  width: 80%;
+  margin: auto;
+  text-align: left;
 }
 </style>
+
+
