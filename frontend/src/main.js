@@ -2,9 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Button } from 'ant-design-vue'
+import { Button, Card } from 'ant-design-vue'
 
 Vue.component(Button.name, Button)
+Vue.component(Card.name, Card)
 
 Vue.config.productionTip = false
 
